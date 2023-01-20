@@ -73,6 +73,7 @@ class Target {
                 pop();
                 break;
             case ShapeStyle.SKEW:
+                let shake = 10;
                 push();
                 noFill();
                 stroke(this.colourR, this.colourG, this.colourB, map(this.emission, this.r, this.maxEmission, 255, 0));
@@ -82,7 +83,6 @@ class Target {
                 push();
                 translate(this.pos.x, this.pos.y);
                 fill(this.colourR, this.colourG, this.colourB);
-                let shake = 10;
                 beginShape();
                     for(let i = 0; i < TWO_PI; i++){
                         let x = (this.r / 2) * cos(i) + random(- this.r / shake, this.r / shake);
